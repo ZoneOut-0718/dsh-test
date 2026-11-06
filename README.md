@@ -24,6 +24,10 @@ GitHub 接口匿名每小时 60 次，不够就设 `GITHUB_TOKEN` 环境变量�
 - 新建工具必须在 `工具索引.md` 加一行：名字、用途、标签、路径、用法、最后使用。
 - 90 天没碰的标「废弃」，别删行。
 
+## 仓库
+
+`git@github.com:ZoneOut-0718/dsh-tools-.git`（GitHub 上显示为 dsh-tools-）
+
 ## 备份
 
 ```bash
