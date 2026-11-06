@@ -10,10 +10,22 @@
 | `github调研` | 单个仓库体检：维护状态、发布产物、依赖规模 |
 | `装技能` | 把仓库 / npm 包里的 agent skill 装进指定目录，装完自检 |
 
-全部只用 Python 标准库，不需要装依赖。手机上直接跑：
+全部只用 Python 标准库，不需要装依赖。
+
+**已建全局命令，任意目录直接敲：**
 
 ```bash
-python3 工具库/github调研/github调研.py owner/repo
+gh-search 网文 skill --top 10          # 找工作区
+gh-inspect owner/repo                  # 单仓库体检
+gh-inspect owner/repo --pypi 包名       # 顺便数依赖
+skill-install list gh owner/repo       # 看仓库里有哪些 skill
+```
+
+命令是 `/usr/local/bin/` 下的 wrapper，因为 `sdcard` 分区**禁止直接执行**脚本（noexec），
+所以用 `python3` 转一手。重装 App 或清了 `/usr/local/bin` 之后，跑一次恢复：
+
+```bash
+python3 工具库/重建命令.py
 ```
 
 GitHub 接口匿名每小时 60 次，不够就设 `GITHUB_TOKEN` 环境变量。
