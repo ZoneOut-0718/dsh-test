@@ -36,6 +36,18 @@ GitHub 接口匿名每小时 60 次，不够就设 `GITHUB_TOKEN` 环境变量�
 - 新建工具必须在 `工具索引.md` 加一行：名字、用途、标签、路径、用法、最后使用。
 - 90 天没碰的标「废弃」，别删行。
 
+
+## App 升级之后
+
+dsh-go 换 runtime 时会重置 proot 环境，`/usr/local/bin` 的命令和 apt 装的工具都会丢。跑一次全恢复：
+
+```bash
+python3 工具库/重建命令.py          # 缺什么补什么
+python3 工具库/重建命令.py --check  # 只体检，不改动
+```
+
+会重建三个全局命令、装回 ssh 与 tesseract，并检查技能目录 / 仓库 / 全局指令 / SSH 密钥是否还在。
+
 ## 仓库
 
 `git@github.com:ZoneOut-0718/dsh-tools-.git`（GitHub 上显示为 dsh-tools-）
